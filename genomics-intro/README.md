@@ -123,7 +123,7 @@ Say something about a population without measuring whole population by taking sm
 
 - 4. An expicit and exact recipe you used to go from 1 -> 2,3
 
-** A guide for the lonely bioinformatician **
+**A guide for the lonely bioinformatician**
 https://homolog.us/blogs/bioinfo/2013/04/23/todays-highlights-a-guide-for-the-lonely-bioinformatician/
 
 ### Plotting Your Data
@@ -194,4 +194,64 @@ The probability of at least 1 false positive <= 0.05. That would mean almost all
 
 Is P-value > 0.05 game over?
 
-<img src="/" width="200" height="200">
+<img src="./images/pval.jpg" width="200" height="200">
+
+- report negative results either way to avoid publication bias
+
+### Confounding
+
+Confounder: a variable that's related to two other variables and may potentially make it look like ther's a relationship between those variables, even when there is not.
+
+Way of dealing: randomly assign treatments.;
+another stratification
+
+### Batch effect
+
+to read: [Alternative empirical Bayes models for adjusting for batch effects in genomic studies](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2263-6)
+
+and: [this Polish paper](https://delibra.bg.polsl.pl/Content/59006/Papiez_Anna_PhD_summary-POL.pdf)
+
+### Batch effect: **Gene expression study**
+
+Case study: [paper](https://pubmed.ncbi.nlm.nih.gov/17206142/)
+"Common genetic variants account for differences in gene expression among ethnic groups"
+They indentified that **78 of genes were differentially expresed** between two ethnic groups. - lots of tiny p-values
+
+But: all the data that came from Europeans were collected in 2003, 2004 & 2005. Whereas all from Asians were from later year, 2006. Is you **adjust for the years** 0% of the genes estimeted to be differentially significant(!).
+
+Why would the date matter:
+
+- technology might change
+
+- aliquot may change
+
+- more
+
+### Batch effect: **Genetic study**
+
+Case study: (paper)[Genetic Signatures of Exceptional Longevity in Humans]
+"Genetic Signatures of Exceptional Longevity in Humans" - genome-wide association study of exceptional longevity;
+They claim there was a small set of genes that would predcit whether you would live to be 100 or not.
+But:
+
+- they measured young people with 1 technology, older with anoter; study subsequently retracted
+
+### Great paper of batch effect
+
+[Tackling the widespread and critical impact of batch effects in high-throughput data](https://www.nature.com/articles/nrg2825):
+
+`For example, batch effects may occur if a subset of experiments was run on Monday and another set on Tuesday, if two technicians were responsible for different subsets of the experiments or if two different lots of reagents, chips or instruments were used.`
+
+- high-throughput technologies provide enough data to detect and even remove them
+
+### Study Design
+
+- balanced
+
+- replicated (technical replicates and biological replicates - different individuals so you can measure inter-person biological variability)
+
+- has controls, negative & positive
+
+### Reading
+
+[Microbial Genes in the Human Genome: Lateral Transfer or Gene Loss?](http://www.sciencemag.org/content/292/5523/1903.full)
