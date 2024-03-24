@@ -1,8 +1,7 @@
 ---
 title: "Plotting Indomethacin concentration"
 output:
-  html_notebook:
-    css: style.css
+  output: rmarkdown::github_document
 ---
 
 ### Lattice introduction
