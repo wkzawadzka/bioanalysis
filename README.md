@@ -2,7 +2,7 @@
 
 What: Notes and learning process :)
 
-                📁 planned 🕜 in progress ✔️ done
+                    📁 planned 🕜 in progress ✔️ done
 
 ### This repo is consiting of following parts:
 
@@ -14,7 +14,7 @@ What: Notes and learning process :)
 
   Here the plan is following:
 
-  - [✔️ | [pre-processing](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymatrix-preprocessing.R) &[ gene expression](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymatrix-limma-gene-expression.R)] Affymatrix
+  - [✔️ | [pre-processing](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymetrix-preprocessing.R) &[ gene expression](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymetrix-limma-gene-expression.R)] Affymetrix
 
   - [🕜 | ] dual-probe Agilent
   - [📁 | ] single color Agilent [todo]

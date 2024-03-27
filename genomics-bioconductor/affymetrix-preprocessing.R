@@ -2,10 +2,10 @@
 # Taught by: Kasper Daniel Hansen, PhD
 library(oligo)
 library(GEOquery)
-# Affymatrix: very cheap, very high quality, very short articles
+# Affymetrix: very cheap, very high quality, very short articles
 # the probes in the array are typically on the order of 25 bases long
 # thats not very long, it means the probes are not very specific, to compensate that
-# on most affymatrix arrays  if you are measuring one specific on a species, or you're measuring a slip, you do this
+# on most affymetrix arrays  if you are measuring one specific on a species, or you're measuring a slip, you do this
 # using multiple probes that all measure the same tack
 # a probe set is a group of probes that all measure the same tack.
 # [quote from Kasper Daniel Hansen, PhD]
@@ -19,7 +19,7 @@ library(GEOquery)
 # : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3902802/
 # Affymetrix uses one-color method 
 
-# Affymatrix microarray - get Data
+# Affymetrix microarray - get Data
 accession = "GSE38792"
 getGEOSuppFiles(accession)
 list.files(accession)

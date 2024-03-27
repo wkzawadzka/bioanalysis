@@ -1,6 +1,6 @@
 # course: Bioconductor for Genomic Data Science
 # Taught by: Kasper Daniel Hansen, PhD
-# limma affymatrix
+# limma affym3trix
 library(limma)
 BiocManager::install("leukemiasEset")
 library(leukemiasEset)
