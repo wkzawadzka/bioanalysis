@@ -1,3 +1,5 @@
+# course: Bioconductor for Genomic Data Science
+# Taught by: Kasper Daniel Hansen, PhD
 # Week 2 of Bioconductor for Genomic Data Science Johns Hopkins University
 
 ## DNA strings

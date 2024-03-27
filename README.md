@@ -1,4 +1,4 @@
-### Learning to work with microarrays
+## Learning to work with microarrays
 
 What: Notes and learning process :)
 
@@ -15,3 +15,10 @@ Here the plan is following:
     - Affymatrix [todo]
 
 - (3) Introduction to Genomic Technologies by Steven Salzberg, Ph.D. and Jeff Leek, Ph.D. (Coursera) [done in [genomics-intro](https://github.com/wkzawadzka/bioanalysis/tree/master/genomics-intro)]
+
+### Other/todo/to read
+
+1. [Graphics and Visualisation](https://bioconductor.org/help/course-materials/2022/CSAMA/lecture/4-thursday/graphics-visualization.pdf)
+2. [Microarray tutorial](https://gtk-teaching.github.io/Microarrays-R/?fbclid=IwAR0zRlSHPpEzjcD4PPtD7NREKrFBsF2lXShOt_pbKcrhRip1V31-_o8lguM)
+3. [PH525x](https://genomicsclass.github.io/book/)
+4. [Hardvard recommentations](https://bioinformatics.bwh.harvard.edu/resources/)
