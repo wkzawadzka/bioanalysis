@@ -40,3 +40,38 @@ Two main approaches to annotation in Bioconductor: package ex.hgu95av2.db or que
 
 - Expression matrix
   Convention: samples on columns and features (genes or probes) on the rows
+
+- Biobase
+
+- GEO, biomaRt
+
+### Week 4
+
+**Getting data into Bioconductor**
+
+**Text files**
+Use readr packages, much faster than read.table() and support conenctions.
+
+- however, fread() from read.table() is fastest parset, but less flexible.
+
+  Public databases:
+
+  - NCBI GEO
+
+  - NCBI SRA
+
+  - EBI ArrayExpress
+
+**Affymatrix raw files - preprocessing and gene expression analysis.**
+
+- limma
+
+**DNA methylation - Illumina 450K**
+
+- minfi
+
+**Count-based RNA-seq analysis**
+
+- DESeq2
+
+- edgeR

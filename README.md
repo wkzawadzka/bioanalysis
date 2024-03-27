@@ -22,7 +22,7 @@ What: Notes and learning process :)
 - [✔️ | [genomics-intro](https://github.com/wkzawadzka/bioanalysis/tree/master/genomics-intro)] **Introduction to Genomic Technologies** by Steven Salzberg, Ph.D. and Jeff Leek, Ph.D. (Coursera)
 
 - [✔️ | [genomics-bioconductor](https://github.com/wkzawadzka/bioanalysis/tree/master/genomics-bioconductor)] **Bioconductor for Genomic Data Science** Taught by:
-  Kasper Daniel Hansen, PhD; Johns Hopkins University
+  Kasper Daniel Hansen, PhD - [link](https://kasperdanielhansen.github.io/genbioconductor/)
 
 ### For later:
 
@@ -30,3 +30,4 @@ What: Notes and learning process :)
 2. [Microarray tutorial](https://gtk-teaching.github.io/Microarrays-R/?fbclid=IwAR0zRlSHPpEzjcD4PPtD7NREKrFBsF2lXShOt_pbKcrhRip1V31-_o8lguM)
 3. [PH525x](https://genomicsclass.github.io/book/)
 4. [Hardvard recommentations](https://bioinformatics.bwh.harvard.edu/resources/)
+5. [HarvardX Biomedical Data Science Open Online Training](https://rafalab.dfci.harvard.edu/pages/harvardx.html)
