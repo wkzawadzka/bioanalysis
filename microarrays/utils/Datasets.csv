@@ -1,0 +1,36 @@
+Accession number;Platform;No samples;Disease;Treatment;PlatformName;Info
+GSE179285;GPL6480;254;CD, UC, control;;Agilent;+OK
+GSE11223;GPL1708;202;UC, control;;Agilent;+OK
+GSE75214;GPL6244;194;CD, UC, control;;Affymetrix;+OK
+GSE92415;GPL13158;183;UC, control;;Affymetrix;+OK
+GSE73661;GPL6244;178;UC;Infliximab, Vedolizumab;Affymetrix;+OK
+GSE48634;GPL10558;171;CD, UC, control;;Illumina;+OK
+GSE87473;GPL13158;127;UC, control;;;-Combination (of GSE87466 and GSE87465)
+GSE3629;GPL570;121;UC, colorectal cancer;;Affymetrix;-No raw files
+GSE59071;GPL6244;116;CD, UC;;;-Subset (of GSE75214)
+GSE23597;GPL570;113;UC;Infliximab, Vedolizumab;Affymetrix;+OK
+GSE87466;GPL13158;108;UC, control;;;-Subset (of GSE92415)
+GSE16879;GPL570;73;CD, UC, control;Infliximab;Affymetrix;+OK
+GSE10616;GPL5760;58;CD, UC, control;;Affymetrix;+OK
+GSE13367;GPL570;56;UC, control;;Affymetrix;+OK
+GSE38713;GPL570;43;UC;;Affymetrix;+OK
+GSE96665;GPL13607;41;CD, UC;;Agilent;+OK
+GSE53306;GPL14951;40;UC, control;;Illumina;+OK
+GSE52746;GPL17996;39;CD, control;Infliximab;Affymetrix;+OK
+GSE114527;GPL14951;38;UC;;Illumina;+OK
+GSE6731;GPL8300;36;CD, UC;;Affymetrix;+OK
+GSE36807;GPL570;35;CD, UC, control;;Affymetrix;+OK
+GSE9686;GPL5760;33;CD, UC, control;;Affymetrix;+OK
+GSE14580;GPL570;30;UC;Infliximab;;-Subset (of GSE16879)
+GSE22619;GPL570;30;UC;;Affymetrix;+OK
+GSE74265;GPL570;30;UC;;Affymetrix;+OK
+GSE9452;GPL570;26;UC;;Affymetrix;+OK
+GSE12251;GPL570;23;UC;Infliximab;;-Subset (of GSE23597)
+GSE87465;GPL13158;19;UC, control;;Affymetrix;+OK
+GSE1152;hybrid of GPL96(HG-U133A) and GPL97(HG-U133B);12;CD, UC, control;;Affymetrix;-No raw files -Colon&Ileum
+GSE72780;GPL570;9;CD;;Affymetrix;+OK
+GSE111761;GPL13497;6;CD;anti-TNF;Agilent;-No UC but OK
+GSE1141;GPL96;6;CD;;Affymetrix;-No raw files
+GSE1142;GPL97;6;CD;;;-Duplicate
+GSE48958;
+GSE65114;
