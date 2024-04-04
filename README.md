@@ -16,7 +16,7 @@ What: Notes and learning process :)
 
   - [✔️ | [pre-processing](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymetrix-preprocessing.R) &[ gene expression](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymetrix-limma-gene-expression.R)] Affymetrix
 
-  - [✔️ | ] dual-probe Agilent
+  - [✔️ | [R file](https://github.com/wkzawadzka/bioanalysis/blob/master/microarrays/workflows/agilent/workflow.R) &[html notes](https://github.com/wkzawadzka/bioanalysis/blob/master/microarrays/workflows/agilent/notebook.nb.html)] ] dual-probe Agilent
   - [📁 | ] single color Agilent [todo]
   - [📁 | ] illumina
 

@@ -76,16 +76,24 @@ RG$genes$Entrez <- annotations$GENE
 #RG$genes$Ensembl <- annotations$ENSEMBL_ID
 RG$genes$GeneName <- annotations$GENE_SYMBOL
 RG$genes$Name <- annotations$NAME
+RG$genes$ID <- annotations$ID
 # preprocess ---------------------------------------------------
 RG.b <- backgroundCorrect(RG,  method="normexp", offset = 20)
 MA <- normalizeWithinArrays(RG.b, method="loess")
 MA.n <- normalizeBetweenArrays(MA, method="Aquantile")
 #MA.avg <- avereps(MA.n, ID=MA$genes$ProbeName)
 MA.n <- MA.n[!(is.na(MA.n$genes$Name)), ]
-MA.avg <- avereps(MA.n, ID=MA.n$genes$Name) # Probe name from annotations
-# genes with multiple "copies" across the genome
+# genes with multiple "copies" across the genome 
+# todo: averaging or take one with best FC?
+#MA.avg <- avereps(MA.n, ID=MA.n$genes$Name) # Probe name from annotations
+#dim(MA.n) # 41689   202
+#dim(MA.avg) # 33492   202 
+
+# account for multiple probes
+MA.avg = avereps(MA.n, ID=MA.n$genes$ProbeName)
 dim(MA.n) # 41689   202
-dim(MA.avg) # 33492   202 
+dim(MA.avg) # 41001   202
+
 # multivariate sample comparison across genes ------------------
 colramp = colorRampPalette(c(3, "white", 2))(9)
 procedureDates <- as.Date(df_pheno$Procedure.Date, format = "%m/%d/%y")
@@ -120,17 +128,18 @@ par(mfrow = c(1, 1))
 # save matrix --------------------------------------------------
 # not sure about this 
 # todo: what is geo series matrix rows selection?
-Control <- MA.n$genes$ControlType==1L
-MA.n.filtered <- MA.n[!Control,  ]
-dim(MA.n.filtered)
-dim(MA.n)
-write.csv(MA.n.filtered, file = paste0(accesion_number, "/matrix.csv"), row.names = MA.n.filtered$genes$ProbeUID)
+Control <- MA.avg$genes$ControlType==1L
+MA.filtered <- MA.avg[!Control,  ]
+dim(MA.filtered)
+dim(MA.avg)
+#df_pheno$GSM[1:5]
+write.table(MA.filtered$M, file = paste0(accesion_number, "/matrix.txt"), row.names = MA.filtered$genes$ID, col.names = df_pheno$GSM)
 # gene expression ----------------------------------------------
 design <- model.matrix(~ df_target$Treatment - 1)
 colnames(design) <- c("Control", "UC")
 cont.matrix <- makeContrasts('UC-Control', levels = design)
 fit <- lmFit(
-  MA.avg,
+  MA.filtered,
   coef = "UC-Control",
   design)
 fit <- contrasts.fit(fit, cont.matrix)
@@ -143,8 +152,8 @@ tt_subset <- tt_subset[, c("Entrez","GeneName", "Description", "logFC", "adj.P.V
 
 # just with entrez
 tt_entrez <- tt_subset[!is.na(tt_subset$Entrez),]
-row.names(tt_entrez) <- tt_entrez$Entrez
-tt_entrez <- tt_entrez[,c("GeneName", "logFC", "adj.P.Val", "P.Value", "Description")]
+#row.names(tt_entrez) <- tt_entrez$Entrez
+tt_entrez <- tt_entrez[,c("Entrez", "GeneName", "logFC", "adj.P.Val", "P.Value", "Description")]
 # plots ------------------------------------------------------
 hist(tt$logFC, breaks = 50, main = "Distribution of Fold Changes", xlab = "Log2 Fold Change")
 hist(x=fit$p.value, freq=TRUE, main="Histogram of p values")
