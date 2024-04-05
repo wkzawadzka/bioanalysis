@@ -77,12 +77,52 @@ RG$genes$Entrez <- annotations$GENE
 RG$genes$GeneName <- annotations$GENE_SYMBOL
 RG$genes$Name <- annotations$NAME
 RG$genes$ID <- annotations$ID
+
+# Alternatively:::
+# probes = RG$genes$ProbeName
+# ensembl <- useMart('ensembl', dataset = 'hsapiens_gene_ensembl')
+# tables <- listAttributes(ensembl)
+# tables[grep('agilent', tables[,1]),] # look for our version
+# # Platform: GPL1708	Agilent-012391 Whole Human Genome Oligo Microarray G4112A (Feature Number version)
+# annot <- getBM(
+#   attributes = c('agilent_gpl6848',
+#                  'wikigene_description',
+#                  'ensembl_gene_id',
+#                  'entrezgene_id',
+#                  'gene_biotype',
+#                  'external_gene_name'),
+#   filters = 'agilent_gpl6848',
+#   values = probes,
+#   mart = ensembl)
+# 
+# annot <- merge(
+#   x = as.data.frame(probes),
+#   y =  annot,
+#   by.y = 'agilent_gpl6848',
+#   all.x = T,
+#   by.x = 'probes')
+# 
+# annotEntrez <- annot[!is.na(annot$entrezgene_id),]
+# annotEntrez <- annotEntrez[which(annotEntrez$probes %in% RG$genes$ProbeName),]
+# annotEntrez <- annotEntrez[match(RG$genes$ProbeName, annotEntrez$probes),]
+# table(RG$genes$ProbeName == annotEntrez$probes) # check allignment
+# 
+# write.table(
+#   annotEntrez,
+#   paste0(accesion_number, '/Annotations_', gsub("-", "_", as.character(Sys.Date())), '.tsv'),
+#   sep = '\t',
+#   row.names = FALSE,
+#   quote = FALSE)
+# 
+# RG$genes$Entrez <- annotEntrez$entrezgene_id
+# #RG$genes$Ensembl <- annotations$ENSEMBL_ID
+# RG$genes$GeneName <- annotEntrez$external_gene_name
 # preprocess ---------------------------------------------------
 RG.b <- backgroundCorrect(RG,  method="normexp", offset = 20)
 MA <- normalizeWithinArrays(RG.b, method="loess")
 MA.n <- normalizeBetweenArrays(MA, method="Aquantile")
-#MA.avg <- avereps(MA.n, ID=MA$genes$ProbeName)
 MA.n <- MA.n[!(is.na(MA.n$genes$Name)), ]
+
 # genes with multiple "copies" across the genome 
 # todo: averaging or take one with best FC?
 #MA.avg <- avereps(MA.n, ID=MA.n$genes$Name) # Probe name from annotations
@@ -130,8 +170,8 @@ par(mfrow = c(1, 1))
 # todo: what is geo series matrix rows selection?
 Control <- MA.avg$genes$ControlType==1L
 MA.filtered <- MA.avg[!Control,  ]
-dim(MA.filtered)
-dim(MA.avg)
+dim(MA.avg) # [1] 41058   202
+dim(MA.filtered) # [1] 41001   202
 #df_pheno$GSM[1:5]
 write.table(MA.filtered$M, file = paste0(accesion_number, "/matrix.txt"), row.names = MA.filtered$genes$ID, col.names = df_pheno$GSM)
 # gene expression ----------------------------------------------
