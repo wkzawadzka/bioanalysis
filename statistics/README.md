@@ -1,4 +1,6 @@
-#
+# Statistics for Genomic Data Science
+
+# Johns Hopkins University Taught by: Jeff Leek, PhD
 
 ## Week 1
 
@@ -53,9 +55,54 @@ But, some clinical trials had been launched based on paper. People were assigned
 
 5. Exploratory analysis
 
+## Week 2
+
+### Visualizing data
+
+- often thousands features per sample, so to visualize/see patterns dimetion reduction is nice
+
+  - SVD genes x samples decomposed into:
+
+    - U eigenarrays/left sigular vectors: patterns accross the arrays
+    - D singular values - diagonal matrix (signifies how much of the variance is explained by those various patterns ^)
+    - V transposed: eigengenes: relationship in column patterns - so patterns across genes
+
+    Properties:
+
+    - columns od Vt/rows of U are orthogonal (uncorellated with each other)
+
+  - Other: Multidimentional scaling, independent components analysis, non-negative matrix factorization
+  - More on the topic [here](https://courses.edx.org/courses/course-v1:HarvardX+PH525.3x+1T2018/0b42cffa7c6e4c559bf74f93fb864a59/).
+  - prcomp: Principal Component Analysis
+
+- svd, boxplots, outlier analysis
+
+### Making data comparable (Pre-processing & normalization)
+
+- Quantile normalization: force the distributions to be exactly the same
+
+<figure>
+  <img src="./images/quantile.png" alt="From [1]">
+  <figcaption>Figure 2: From [2]</figcaption>
+</figure>
+
+- Preprocessing and normaliztion are **higly platform/problem dependent** :(
+
+### Linear modelling
+
+Full course on that [here](https://www.coursera.org/learn/regression-models).
+
+- case: a continuous outcome, but maybe a not continuous covariate or a categorical covariate or a factor-level covariate
+
+- Adjusting for covariates in linear regression models.
+
+### Batch-effects, Confounders
+
 ### Citations
 
 [1] Huber, W., Carey, V., Gentleman, R. et al. Orchestrating high-throughput genomic analysis with Bioconductor. Nat Methods 12, 115–121 (2015). https://doi.org/10.1038/nmeth.3252
+
+[2] Hicks, S.C., Irizarry, R.A. quantro: a data-driven approach to guide the choice of an appropriate normalization method. Genome Biol 16, 117 (2015). https://doi.org/10.1186/s13059-015-0679-0
 
 ### To read
 
