@@ -16,8 +16,8 @@ What: Notes and learning process :)
 
   - [✔️ | [pre-processing](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymetrix-preprocessing.R) &[ gene expression](https://github.com/wkzawadzka/bioanalysis/blob/master/genomics-bioconductor/affymetrix-limma-gene-expression.R)] Affymetrix
 
-  - [✔️ | [R file](https://github.com/wkzawadzka/bioanalysis/blob/master/microarrays/workflows/agilent/workflow.R) &[html notes](https://github.com/wkzawadzka/bioanalysis/blob/master/microarrays/workflows/agilent/notebook.nb.html)] ] dual-probe Agilent
-  - [📁 | ] single color Agilent [todo]
+  - [✔️ | [R file](https://github.com/wkzawadzka/bioanalysis/blob/master/microarrays/workflows/agilent/workflow.R) & [html notes](https://github.com/wkzawadzka/bioanalysis/blob/master/microarrays/workflows/agilent/notebook.nb.html)] dual-probe Agilent
+  - [✔️ | ] single color Agilent
   - [📁 | ] illumina
 
 - [✔️ | [genomics-intro](https://github.com/wkzawadzka/bioanalysis/tree/master/genomics-intro)] **Introduction to Genomic Technologies** by Steven Salzberg, Ph.D. and Jeff Leek, Ph.D. (Coursera)
@@ -25,7 +25,7 @@ What: Notes and learning process :)
 - [✔️ | [genomics-bioconductor](https://github.com/wkzawadzka/bioanalysis/tree/master/genomics-bioconductor)] **Bioconductor for Genomic Data Science** Taught by:
   Kasper Daniel Hansen, PhD - [link](https://kasperdanielhansen.github.io/genbioconductor/)
 
-- [🕜 | [statistics](https://github.com/wkzawadzka/bioanalysis/tree/master/statistics)] **Statistics for Genomic Data Science** Taught by: Jeff Leek, PhD
+- [✔️| [statistics](https://github.com/wkzawadzka/bioanalysis/tree/master/statistics)] **Statistics for Genomic Data Science** Taught by: Jeff Leek, PhD
 
 ### For later:
 

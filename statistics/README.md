@@ -98,6 +98,67 @@ Full course on that [here](https://www.coursera.org/learn/regression-models).
 
 ### Batch-effects, Confounders
 
+## Week 3
+
+### Counts data
+
+- The most common distribution to model counts is Poisson. Mean & variance: lambda. So if low mean, then also low variance, when you increase the mean you will increase the probability.
+  Nice property: always positive.
+
+Most popular techniques:
+
+1. edgeR
+2. DEseq (local regression)
+
+More here [Generalized Linear Models](https://grodri.github.io/glms/notes/)
+
+### Permutation
+
+-> one of the most widely used tools for assessing statistical significance in genomic studies
+-> you do permutation of labels and then you recalculate a T statistic for each gene
+
+By permuting the labels we're sort of making the assumption that the labels don't matter, that GE are independent of the labels, so distribution is same between e.g. responders and non responders. So that T-statistic will actually find any difference if you do this permutation approach, any difference including in the variance or any of the other moments of the data of the generating distribution.
+
+### Pvalues
+
+The p-values almost always go to zero with the sample size. That's another common misinterpretation of the p-value. Just because you got a really small p-value, it doesn't mean that the difference is huge. It could just be that your sample size is really large, and so the variability is small.
+
+### Multiple testing
+
+- with 0.05 cutoff you will get about 1/20 times results statistically significant even though it might not be. e.g. for 10,000 genes:
+  10,000 x 0.05 = expected 500 false positives.
+
+Another examaple: suppose I say 50 out of 10,000 genes are significant at 0.05 level.
+
+You would expect 0.05\*10,000=500 false positives. So 50 does not seem good, they are probably mostly false positives.
+
+But if we are talking 0.05 false discovery rate, then 0.05\*50 = 2.5 false positives expected.
+
+And if family wise error rate - then p of at least 1 false positive <= 0.05.
+
+### Correction
+
+1. Bonferroni Correction (for family wise)
+   pvalues less than 0.05/m are significant (m=# of tests)
+
+2. Benjamini-Hochberg Correction (for false discovery rate)
+   (a) order the values: p1,p2,..pm (smallest to largest)
+   (b) if pi <= 0.05 \* i/m then it is significant
+
+Family wise error usually used when wanting to be sure dicoveries are absolutely most likely to not be false positives. (usually in genomewise association studies, genetics)
+
+False discovery usually for quantitative measurements, like DNA methylation, chip sequencing, gene expression variation. And where you eexpect to see a relatively large number of discoveries.
+
+More on the topic: [Statistical significance for genomewide studies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC170937/)
+Also: [Significance analysis of microarrays applied to the ionizing radiation response](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC33173/)
+
+## Week 4
+
+### Gene set enrichement
+
+- easy to "tell stories" if you aren't careful!
+- second multiple testing problem (multiple sets)
+
 ### Citations
 
 [1] Huber, W., Carey, V., Gentleman, R. et al. Orchestrating high-throughput genomic analysis with Bioconductor. Nat Methods 12, 115–121 (2015). https://doi.org/10.1038/nmeth.3252
